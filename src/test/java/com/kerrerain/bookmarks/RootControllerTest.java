@@ -10,11 +10,29 @@ import org.springframework.test.web.reactive.server.WebTestClient;
 public class RootControllerTest {
 
   @Test
+  public void shouldBlockIfNotAuthenticated(@Autowired WebTestClient client) {
+    // Given
+
+    // When
+    var response = client //
+        .get() //
+        .uri("/") //
+        .exchange();
+
+    // Then
+    response.expectStatus().isUnauthorized();
+  }
+
+  @Test
   public void shouldReturnMetadatas(@Autowired WebTestClient client) {
     // Given
 
     // When
-    var response = client.get().uri("/").exchange();
+    var response = client //
+        .get() //
+        .uri("/") //
+        .headers(headers -> headers.setBasicAuth("admin", "admin")) //
+        .exchange();
 
     // Then
     response.expectStatus().isOk();
