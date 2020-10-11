@@ -1,4 +1,4 @@
-package com.kerrerain.bookmarks.server.root;
+package com.kerrerain.bookmarks.server;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

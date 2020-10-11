@@ -2,8 +2,8 @@ package com.kerrerain.bookmarks.domain.bookmark;
 
 import java.util.List;
 
-import com.kerrerain.bookmarks.infra.bookmark.Bookmark;
-import com.kerrerain.bookmarks.infra.bookmark.BookmarkRepository;
+import com.kerrerain.bookmarks.infra.entities.Bookmark;
+import com.kerrerain.bookmarks.infra.repositories.BookmarkRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

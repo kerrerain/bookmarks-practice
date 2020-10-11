@@ -1,4 +1,4 @@
-package com.kerrerain.bookmarks.infra.bookmark;
+package com.kerrerain.bookmarks.infra.entities;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
