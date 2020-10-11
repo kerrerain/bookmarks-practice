@@ -1,4 +1,4 @@
-package com.kerrerain.bookmarks.root;
+package com.kerrerain.bookmarks.server.root;
 
 public class ApiMetadata {
 

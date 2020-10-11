@@ -2,6 +2,16 @@
 
 A sandbox web API to practice skills.
 
+## Configuring the test local database
+
+```
+cd infra
+docker-compose up
+docker exec -it bookmarks-postgres createdb -U postgres test
+docker cp infra/create-database.sql bookmarks-postgres:/usr/src
+docker exec -it bookmarks-postgres psql -U postgres -d test -f /usr/src/create-database.sql
+```
+
 ## Running the server with docker
 
 Build the Docker image:

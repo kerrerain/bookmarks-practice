@@ -1,0 +1,30 @@
+version: "3.8"
+services:
+  postgres:
+    image: postgres:12
+    container_name: bookmarks-postgres
+    ports:
+      - 5432:5432
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD: postgres
+    networks:
+      - postgres-network
+  pg-admin:
+    image: dpage/pgadmin4:4
+    container_name: bookmarks-pg-admin
+    ports:
+      - 8000:80
+    volumes:
+      - pg-admin-data:/var/lib/pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@postgres.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+    networks:
+      - postgres-network
+volumes:
+  postgres-data: {}
+  pg-admin-data: {}
+networks:
+  postgres-network: {}
